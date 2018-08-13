@@ -22,7 +22,7 @@ include(`platform/intel/bxt.m4')
 # Define the pipelines
 #
 # PCM0 ----> volume -----> iDisp1
-# PCM1 ----> Volume <----- iDisp2
+# PCM1 ----> Volume -----> iDisp2
 # PCM2 ----> volume -----> iDisp3
 
 dnl PIPELINE_PCM_ADD(pipeline,
@@ -79,9 +79,9 @@ DAI_ADD(sof/pipe-dai-playback.m4,
 
 
 dnl PCM_PLAYBACK_ADD(name, pcm_id, playback)
-PCM_PLAYBACK_ADD(Port0, 0, PIPELINE_PCM_1)
-PCM_PLAYBACK_ADD(Port1, 1, PIPELINE_PCM_3)
-PCM_PLAYBACK_ADD(Port2, 2, PIPELINE_PCM_5)
+PCM_PLAYBACK_ADD(HDMI1, 0, PIPELINE_PCM_1)
+PCM_PLAYBACK_ADD(HDMI2, 1, PIPELINE_PCM_3)
+PCM_PLAYBACK_ADD(HDMI3, 2, PIPELINE_PCM_5)
 
 #
 # BE configurations - overrides config in ACPI if present
